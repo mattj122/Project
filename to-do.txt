@@ -1,0 +1,22 @@
+To Do: 
+	-CSV Reader: 
+		Creates objects that have a source, length, file size etc. 
+		Show object holds arrays of episodes and episode names <String>
+	-Loading Screen:
+		When loading CSV files, scanning directories, etc. 
+		Takes String as input to display its actions
+	-Queue files(also CSV most likely?)
+		Has most recent queue
+		Checks if files are still on computer
+		Load queues from series
+		Save queues
+		Specify type
+	-Dialog panel of files without CSVs
+	-Main window design
+	-Rescan function
+	-Popup for missing file data
+		Open file in explorer
+		Skip all(num)
+		skip
+		Ok (if reqs met)
+		Cancel (use old data)
