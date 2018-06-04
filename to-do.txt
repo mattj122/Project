@@ -20,3 +20,8 @@ To Do:
 		skip
 		Ok (if reqs met)
 		Cancel (use old data)
+	-Access video metadata
+		length
+		name
+		year
+		genre(comments?, otherwise data entry)
