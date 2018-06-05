@@ -1,5 +1,5 @@
 name,filename,season,filetype,seas_ep_num,tot_ep_num,length,size,-1
-tot_ep=3,tot_seas=2,tot_length="",tot_size="",-1
+tot_ep=3,tot_seas=2,tot_length="",
 VIDEO NAME,Mole Hunt,1,m4v,1,1,LENGTH,99.8MB,-1
 VIDEO NAME,Training Day,1,m4v,2,2,LENGTH,99.7MB,-1
 VIDEO NAME,Diversity Hire,1,m4v,3,3,LENGTH,95.9MB,-1

@@ -7,14 +7,21 @@ import java.util.*;
 
 public class CSVWriter {
 	public String[] extens = { "m4v", "avi", "mp4", "mkv" };
-	public final String USER = "Matt";
-	//public final String USER = "vv3383my";
+	//public final String USER = "Matt";
+	public final String USER = "vv3383my";
 	public final String LIMITER = ",";
 	public final static String SHOW = "Archer";
 	public final static String OUT_FILE_NAME = "archer.csv";
-	public final String SHOW_PATH = "C:\\Users\\" + USER + "\\Documents\\GitHub\\Organizer\\test_env\\bin\\DUMMY\\";
-	public final String OUTPATH_SHOWS = "C:\\Users\\" + USER + "\\Documents\\GitHub\\Organizer\\test_env\\bin\\sh\\";
+	//Test environment
+	//public final String SHOW_PATH = "C:\\Shows\\DUMMY\\";
+	//Real path
+	public final String SHOW_PATH = "C:\\Shows\\";
+	public final String OUTPATH_SHOWS = "C:\\Users\\" + USER + "\\Documents\\GitHub\\Project\\test_env\\bin\\sh\\";
 	public final String OUTPATH_MOVIES = "C:\\Movies\\bin\\";
+	int totEp = 0, totSeas = 0;
+	double totSize = 0.0;
+	//Format of file size
+	DecimalFormat df = new DecimalFormat("##.#");
 	PrintWriter pw = null;
 	
 	StringBuilder sb = new StringBuilder();
@@ -38,8 +45,17 @@ public class CSVWriter {
 		String [][] arr = null;
 		arr = getShowList();
 		
-		String colNames = "name,filename,season,filetype,seas_ep_num,tot_ep_num,length,size,-1";
+		String colNames = "name,filename,filetype,season,seas_ep_num,tot_ep_num,length,size";
+		String totSizeStr = "";
+		if(totSize > 1024) {
+			totSizeStr = df.format(totSize/1024.0) + "GB";
+		}
+		else {
+			totSizeStr = df.format(totSize) + "MB";
+		}
+		String data = "tot_ep=" + totEp + ",tot_seas=" + totSeas + ",tot_length=" + "LENGTH" + ",tot_size=" + totSizeStr;
 		sb.append(colNames + "\n");
+		sb.append(data + "\n");
 		for(int i = 0; i < arr.length; i++) {
 			for(int j = 0; j < arr[0].length; j++) {
 				sb.append(arr[i][j]);
@@ -47,7 +63,7 @@ public class CSVWriter {
 					sb.append(LIMITER);
 				}
 			}
-			sb.append(",-1\n");
+			sb.append("\n");
 		}
 	}
 
@@ -62,20 +78,17 @@ public class CSVWriter {
 		int seasNum = 0;
 		//master array
 		String[][] arr = null;
-		//total amount of episodes
-		int totEp = 0;
 		//String for file size
 		String sizeStr = "";
 		//Episode number in the season
 		int epNum;
-		//Format of file size
-		DecimalFormat df = new DecimalFormat("##.#");
 		//Directory of show, duh
 		File showDir = new File(SHOW_PATH + SHOW);
 		//Directory of season, initialized to null in case of exceptions
 		File seasDir = null;
 		//used for directories to seasons
 		String [] files = null;
+		boolean seasonAdded = false;
 		//Unnecessary but easier
 		ArrayList<String[]> arrList = new ArrayList<String[]>();
 		//episodes within a season
@@ -92,6 +105,7 @@ public class CSVWriter {
 				//Checks if directory contains the word season, and sets path
 				if(files[i].contains("Season") && (seasDir = new File(SHOW_PATH + SHOW + "\\" 
 						+ files[i])).isDirectory()) {
+					seasonAdded = false;
 					//Get current season based on the directory name, not dynamic but makes the naming uniform
 					seasNum = Integer.parseInt(files[i].substring(files[i].length()-1));
 					epNum = 0;
@@ -101,6 +115,10 @@ public class CSVWriter {
 					eps = sortEps(eps);
 					for(int j = 0; j < eps.length; j++) {
 						if(eps[j] != null) {
+							if(!seasonAdded) {
+								totSeas++;
+								seasonAdded = true;
+							}
 							//Get filetype extension
 							extension = eps[j].substring(eps[j].lastIndexOf(".") + 1);
 							//Determines if the episodes are files that can be played by the selected player
@@ -109,6 +127,7 @@ public class CSVWriter {
 								epNum++;
 								//Get file size and convert to MB
 								double size = (Files.size((new File(seasDir + "\\" + eps[j])).toPath()))/1024.0/1024.0;
+								totSize += size;
 								//Determines if in GB or MB
 								if(size > 1024) {
 									sizeStr = df.format(size/1024.0) + "GB";
@@ -119,7 +138,7 @@ public class CSVWriter {
 								//Name of the episode/video, name of the file after numbering (may remove later), Season the episode is in, 
 										//File extension, episode number in the season, overall episode number length of the video, string for file size
 								String[] temp = {"VIDEO NAME", eps[j].substring(eps[j].indexOf(" ") + 1, 
-										eps[j].lastIndexOf(".")), Integer.toString(seasNum), extension, Integer.toString(epNum), 
+										eps[j].lastIndexOf(".")), extension, Integer.toString(seasNum), Integer.toString(epNum), 
 										Integer.toString(totEp), "LENGTH", sizeStr};
 								//Add to arraylist
 								arrList.add(temp);
@@ -188,16 +207,21 @@ public class CSVWriter {
 			for(int i = 0; i < eps.length - 1; i++) {
 				//Check that episode follows naming schema
 				try {
-					epNum1 = Integer.parseInt(eps[i].substring(2,4));
+					if(eps[i] != null) {
+						epNum1 = Integer.parseInt(eps[i + 1].substring(2,4));
+					}
 				}
-				catch(Exception e) {
-					System.out.println(eps[i] + " does not follow naming procedure");
+				catch(NumberFormatException | NullPointerException e) {
+					System.out.println(eps[i] + " does not follow proper naming schema (index = "+ i +")");
+					eps[i] = null;
 				}
 				try {
-					epNum2 = Integer.parseInt(eps[i + 1].substring(2,4));
+					if(eps[i+1] != null) {
+						epNum2 = Integer.parseInt(eps[i + 1].substring(2,4));
+					}
 				}
-				catch(Exception e) {
-					System.out.println(eps[i + 1] + " does not follow naming procedure");
+				catch(NumberFormatException | NullPointerException e) {
+					System.out.println(eps[i + 1] + " does not follow proper naming schema (index = "+ (i+1) +")");
 					eps[i+1] = null;
 				}
 				if(epNum1 > epNum2) {
