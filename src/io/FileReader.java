@@ -20,8 +20,8 @@ public class FileReader {
 	public static String getDir() {
 		return VLC_SRC;
 	}
-	public static File[] getList() {
-		File[] listTemp = new File[list.size()];
+	public static String[] getList() {
+		String[] listTemp = new String[list.size()];
 		list.toArray(listTemp);
 		return listTemp;
 	}

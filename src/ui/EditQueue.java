@@ -30,14 +30,14 @@ public class EditQueue {
 	/**
 	 * Create the application.
 	 */
-	public EditQueue(ArrayList<File> queueList, MovieLauncher mL) {
+	public EditQueue(ArrayList<String> queueList, MovieLauncher mL) {
 		initialize(queueList, mL);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(ArrayList<File> queueList, MovieLauncher mL) {
+	private void initialize(ArrayList<String> queueList, MovieLauncher mL) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 591, 374);
 		frame.addWindowListener(new WindowAdapter(){
@@ -85,7 +85,7 @@ public class EditQueue {
 				if(!movL.isSelectionEmpty()) {
 					if(movL.getSelectedIndex() > 0 && queueList.size() > 1) {
 						int index = movL.getSelectedIndex();
-						File temp = queueList.get(index);
+						String temp = queueList.get(index);
 						queueList.remove(index);
 						queueList.add(index-1, temp);
 						updateQueue(movL, queueList);
@@ -106,7 +106,7 @@ public class EditQueue {
 				if(!movL.isSelectionEmpty()) {
 					if(movL.getSelectedIndex() < queueList.size()-1 && queueList.size() > 1) {
 						int index = movL.getSelectedIndex();
-						File temp = queueList.get(index);
+						String temp = queueList.get(index);
 						queueList.remove(index);
 						queueList.add(index+1, temp);
 						updateQueue(movL, queueList);
@@ -161,7 +161,7 @@ public class EditQueue {
 		frame.getContentPane().setLayout(groupLayout);
 	}
 	@SuppressWarnings("serial")
-	public void updateQueue(JList<String> queue, ArrayList<File> queueList) {
+	public void updateQueue(JList<String> queue, ArrayList<String> queueList) {
 		if(queueList.isEmpty()) {
 			btnClear.setEnabled(false);
 		}
@@ -170,7 +170,7 @@ public class EditQueue {
 		}
 		String []temp = new String[queueList.size()];
 		for(int i = 0; i < temp.length; i++) {
-			temp[i] = queueList.get(i).getName();
+			temp[i] = queueList.get(i);
 		}
 		//queueList.toArray(temp);
 		queue.setModel(new AbstractListModel<String>() {

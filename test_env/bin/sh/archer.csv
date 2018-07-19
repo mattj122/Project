@@ -1,12 +1,77 @@
-name,filename,filetype,season,seas_ep_num,tot_ep_num,length,size
-tot_ep=10,tot_seas=1,tot_length=LENGTH,tot_size=983.5MB
-VIDEO NAME,Mole Hunt,m4v,1,1,1,LENGTH,99.8MB
-VIDEO NAME,Training Day,m4v,1,2,2,LENGTH,99.7MB
-VIDEO NAME,Diversity Hire,m4v,1,3,3,LENGTH,95.9MB
-VIDEO NAME,Killing Utne,m4v,1,4,4,LENGTH,98.5MB
-VIDEO NAME,Honeypot,m4v,1,5,5,LENGTH,98.4MB
-VIDEO NAME,Skorpio,m4v,1,6,6,LENGTH,98.9MB
-VIDEO NAME,Skytanic,m4v,1,7,7,LENGTH,98.1MB
-VIDEO NAME,The Rock,m4v,1,8,8,LENGTH,97.3MB
-VIDEO NAME,Job Offer,m4v,1,9,9,LENGTH,98.4MB
-VIDEO NAME,Dial M for Mother,m4v,1,10,10,LENGTH,98.5MB
+name,filename,filetype,season,seas_ep_num,tot_ep_num,length,size, path
+tot_ep=75,tot_seas=6,tot_length=LENGTH,tot_size=7.1GB
+VIDEO NAME,Mole Hunt,m4v,1,1,1,LENGTH,99.8MB,C:\Shows\Archer\Season 1\1-01 Mole Hunt.m4v
+VIDEO NAME,Training Day,m4v,1,2,2,LENGTH,99.7MB,C:\Shows\Archer\Season 1\1-02 Training Day.m4v
+VIDEO NAME,Diversity Hire,m4v,1,3,3,LENGTH,95.9MB,C:\Shows\Archer\Season 1\1-03 Diversity Hire.m4v
+VIDEO NAME,Killing Utne,m4v,1,4,4,LENGTH,98.5MB,C:\Shows\Archer\Season 1\1-04 Killing Utne.m4v
+VIDEO NAME,Honeypot,m4v,1,5,5,LENGTH,98.4MB,C:\Shows\Archer\Season 1\1-05 Honeypot.m4v
+VIDEO NAME,Skorpio,m4v,1,6,6,LENGTH,98.9MB,C:\Shows\Archer\Season 1\1-06 Skorpio.m4v
+VIDEO NAME,Skytanic,m4v,1,7,7,LENGTH,98.1MB,C:\Shows\Archer\Season 1\1-07 Skytanic.m4v
+VIDEO NAME,The Rock,m4v,1,8,8,LENGTH,97.3MB,C:\Shows\Archer\Season 1\1-08 The Rock.m4v
+VIDEO NAME,Job Offer,m4v,1,9,9,LENGTH,98.4MB,C:\Shows\Archer\Season 1\1-09 Job Offer.m4v
+VIDEO NAME,Dial M for Mother,m4v,1,10,10,LENGTH,98.5MB,C:\Shows\Archer\Season 1\1-10 Dial M for Mother.m4v
+VIDEO NAME,Swiss Miss,m4v,2,1,11,LENGTH,97.6MB,C:\Shows\Archer\Season 2\2-01 Swiss Miss.m4v
+VIDEO NAME,A Going Concern,m4v,2,2,12,LENGTH,98.5MB,C:\Shows\Archer\Season 2\2-02 A Going Concern.m4v
+VIDEO NAME,Blood Test,m4v,2,3,13,LENGTH,98.5MB,C:\Shows\Archer\Season 2\2-03 Blood Test.m4v
+VIDEO NAME,Pipeline Fever,m4v,2,4,14,LENGTH,98.5MB,C:\Shows\Archer\Season 2\2-04 Pipeline Fever.m4v
+VIDEO NAME,The Double Deuce,m4v,2,5,15,LENGTH,93.5MB,C:\Shows\Archer\Season 2\2-05 The Double Deuce.m4v
+VIDEO NAME,Tragical History,m4v,2,6,16,LENGTH,96.2MB,C:\Shows\Archer\Season 2\2-06 Tragical History.m4v
+VIDEO NAME,Movie Star,m4v,2,7,17,LENGTH,93.7MB,C:\Shows\Archer\Season 2\2-07 Movie Star.m4v
+VIDEO NAME,Stage Two,m4v,2,8,18,LENGTH,99.7MB,C:\Shows\Archer\Season 2\2-08 Stage Two.m4v
+VIDEO NAME,Placebo Effect,m4v,2,9,19,LENGTH,98.4MB,C:\Shows\Archer\Season 2\2-09 Placebo Effect.m4v
+VIDEO NAME,El Secuestro,m4v,2,10,20,LENGTH,93.5MB,C:\Shows\Archer\Season 2\2-10 El Secuestro.m4v
+VIDEO NAME,Jeu Monegasque,m4v,2,11,21,LENGTH,97.7MB,C:\Shows\Archer\Season 2\2-11 Jeu Monegasque.m4v
+VIDEO NAME,White Nights,m4v,2,12,22,LENGTH,94.3MB,C:\Shows\Archer\Season 2\2-12 White Nights.m4v
+VIDEO NAME,Double Trouble,m4v,2,13,23,LENGTH,99.9MB,C:\Shows\Archer\Season 2\2-13 Double Trouble.m4v
+VIDEO NAME,Heart of Archness - Part I,m4v,3,1,24,LENGTH,99.8MB,C:\Shows\Archer\Season 3\3-01 Heart of Archness - Part I.m4v
+VIDEO NAME,Heart of Archness - Part II ,m4v,3,2,25,LENGTH,92.2MB,C:\Shows\Archer\Season 3\3-02 Heart of Archness - Part II .m4v
+VIDEO NAME,Heart of Archness - Part III,m4v,3,3,26,LENGTH,91.8MB,C:\Shows\Archer\Season 3\3-03 Heart of Archness - Part III.m4v
+VIDEO NAME,The Man From Jupiter,m4v,3,4,27,LENGTH,95.3MB,C:\Shows\Archer\Season 3\3-04 The Man From Jupiter.m4v
+VIDEO NAME,El Contador,m4v,3,5,28,LENGTH,99.4MB,C:\Shows\Archer\Season 3\3-05 El Contador.m4v
+VIDEO NAME,The Limited,m4v,3,6,29,LENGTH,96.5MB,C:\Shows\Archer\Season 3\3-06 The Limited.m4v
+VIDEO NAME,Drift Problem,m4v,3,7,30,LENGTH,96.5MB,C:\Shows\Archer\Season 3\3-07 Drift Problem.m4v
+VIDEO NAME,Lo Scandalo,m4v,3,8,31,LENGTH,99.6MB,C:\Shows\Archer\Season 3\3-08 Lo Scandalo.m4v
+VIDEO NAME,Bloody Ferlin,m4v,3,9,32,LENGTH,99.8MB,C:\Shows\Archer\Season 3\3-09 Bloody Ferlin.m4v
+VIDEO NAME,Crossing Over,m4v,3,10,33,LENGTH,99.8MB,C:\Shows\Archer\Season 3\3-10 Crossing Over.m4v
+VIDEO NAME,Skin Game,m4v,3,11,34,LENGTH,99.8MB,C:\Shows\Archer\Season 3\3-11 Skin Game.m4v
+VIDEO NAME,Space Race - Part I,m4v,3,12,35,LENGTH,94.2MB,C:\Shows\Archer\Season 3\3-12 Space Race - Part I.m4v
+VIDEO NAME,Space Race - Part II ,m4v,3,13,36,LENGTH,98.4MB,C:\Shows\Archer\Season 3\3-13 Space Race - Part II .m4v
+VIDEO NAME,Fugue and Riffs,m4v,4,1,37,LENGTH,98.1MB,C:\Shows\Archer\Season 4\4-01 Fugue and Riffs.m4v
+VIDEO NAME,The Wind Cries Mary,m4v,4,2,38,LENGTH,100MB,C:\Shows\Archer\Season 4\4-02 The Wind Cries Mary.m4v
+VIDEO NAME,Legs,m4v,4,3,39,LENGTH,95.5MB,C:\Shows\Archer\Season 4\4-03 Legs.m4v
+VIDEO NAME,Midnight Ron,m4v,4,4,40,LENGTH,97.2MB,C:\Shows\Archer\Season 4\4-04 Midnight Ron.m4v
+VIDEO NAME,Viscous Coupling,m4v,4,5,41,LENGTH,97.1MB,C:\Shows\Archer\Season 4\4-05 Viscous Coupling.m4v
+VIDEO NAME,Once Bitten,m4v,4,6,42,LENGTH,98.4MB,C:\Shows\Archer\Season 4\4-06 Once Bitten.m4v
+VIDEO NAME,Live and Let Dine,m4v,4,7,43,LENGTH,93.3MB,C:\Shows\Archer\Season 4\4-07 Live and Let Dine.m4v
+VIDEO NAME,Coyote Lovely,m4v,4,8,44,LENGTH,98.7MB,C:\Shows\Archer\Season 4\4-08 Coyote Lovely.m4v
+VIDEO NAME,The Honeymooners,m4v,4,9,45,LENGTH,93.6MB,C:\Shows\Archer\Season 4\4-09 The Honeymooners.m4v
+VIDEO NAME,Un Chien Tangerine,m4v,4,10,46,LENGTH,95.3MB,C:\Shows\Archer\Season 4\4-10 Un Chien Tangerine.m4v
+VIDEO NAME,The Papal Chase,m4v,4,11,47,LENGTH,89.1MB,C:\Shows\Archer\Season 4\4-11 The Papal Chase.m4v
+VIDEO NAME,Sea Tunt - Part I,m4v,4,12,48,LENGTH,98.1MB,C:\Shows\Archer\Season 4\4-12 Sea Tunt - Part I.m4v
+VIDEO NAME,Sea Tunt - Part II,m4v,4,13,49,LENGTH,98.5MB,C:\Shows\Archer\Season 4\4-13 Sea Tunt - Part II.m4v
+VIDEO NAME,White Elephant,m4v,5,1,50,LENGTH,91.9MB,C:\Shows\Archer\Season 5\5-01 White Elephant.m4v
+VIDEO NAME,A Kiss While Dying,m4v,5,2,51,LENGTH,97.8MB,C:\Shows\Archer\Season 5\5-02 A Kiss While Dying.m4v
+VIDEO NAME,A Debt of Honor,m4v,5,3,52,LENGTH,98.3MB,C:\Shows\Archer\Season 5\5-03 A Debt of Honor.m4v
+VIDEO NAME,House Call,m4v,5,4,53,LENGTH,98.2MB,C:\Shows\Archer\Season 5\5-04 House Call.m4v
+VIDEO NAME,Southbound and Down,m4v,5,5,54,LENGTH,97.3MB,C:\Shows\Archer\Season 5\5-05 Southbound and Down.m4v
+VIDEO NAME,Baby Shower,m4v,5,6,55,LENGTH,96.9MB,C:\Shows\Archer\Season 5\5-06 Baby Shower.m4v
+VIDEO NAME,Smugglers Blues,m4v,5,7,56,LENGTH,92.8MB,C:\Shows\Archer\Season 5\5-07 Smugglers Blues.m4v
+VIDEO NAME,The Rules of Extraction,m4v,5,8,57,LENGTH,95.4MB,C:\Shows\Archer\Season 5\5-08 The Rules of Extraction.m4v
+VIDEO NAME,On the Carpet,m4v,5,9,58,LENGTH,98.5MB,C:\Shows\Archer\Season 5\5-09 On the Carpet.m4v
+VIDEO NAME,Palace Intrigue - Part 1,m4v,5,10,59,LENGTH,94.6MB,C:\Shows\Archer\Season 5\5-10 Palace Intrigue - Part 1.m4v
+VIDEO NAME,Palace Intrigue - Part 2,m4v,5,11,60,LENGTH,94.1MB,C:\Shows\Archer\Season 5\5-11 Palace Intrigue - Part 2.m4v
+VIDEO NAME,Filibuster,m4v,5,12,61,LENGTH,92.9MB,C:\Shows\Archer\Season 5\5-12 Filibuster.m4v
+VIDEO NAME,Arrival Departure,m4v,5,13,62,LENGTH,98.3MB,C:\Shows\Archer\Season 5\5-13 Arrival Departure.m4v
+VIDEO NAME,The Holdout,m4v,6,1,63,LENGTH,100.1MB,C:\Shows\Archer\Season 6\6-01 The Holdout.m4v
+VIDEO NAME,Three to Tango,mp4,6,2,64,LENGTH,95.9MB,C:\Shows\Archer\Season 6\6-02 Three to Tango.mp4
+VIDEO NAME,The Archer Sanction,mp4,6,3,65,LENGTH,94MB,C:\Shows\Archer\Season 6\6-03 The Archer Sanction.mp4
+VIDEO NAME,Edie's Wedding,m4v,6,4,66,LENGTH,100.5MB,C:\Shows\Archer\Season 6\6-04 Edie's Wedding.m4v
+VIDEO NAME,Vision Quest,m4v,6,5,67,LENGTH,95.2MB,C:\Shows\Archer\Season 6\6-05 Vision Quest.m4v
+VIDEO NAME,Sitting,m4v,6,6,68,LENGTH,90.4MB,C:\Shows\Archer\Season 6\6-06 Sitting.m4v
+VIDEO NAME,Nellis,m4v,6,7,69,LENGTH,91.9MB,C:\Shows\Archer\Season 6\6-07 Nellis.m4v
+VIDEO NAME,The Kanes,m4v,6,8,70,LENGTH,97.3MB,C:\Shows\Archer\Season 6\6-08 The Kanes.m4v
+VIDEO NAME,Pocket Listing,m4v,6,9,71,LENGTH,95.7MB,C:\Shows\Archer\Season 6\6-09 Pocket Listing.m4v
+VIDEO NAME,Reignition Sequence,m4v,6,10,72,LENGTH,103.5MB,C:\Shows\Archer\Season 6\6-10 Reignition Sequence.m4v
+VIDEO NAME,Achub Y Morfilod,mp4,6,11,73,LENGTH,99.6MB,C:\Shows\Archer\Season 6\6-11 Achub Y Morfilod.mp4
+VIDEO NAME,Drastic Voyage - Part 1,m4v,6,12,74,LENGTH,99MB,C:\Shows\Archer\Season 6\6-12 Drastic Voyage - Part 1.m4v
+VIDEO NAME,Drastic Voyage - Part 2,m4v,6,13,75,LENGTH,99.4MB,C:\Shows\Archer\Season 6\6-13 Drastic Voyage - Part 2.m4v

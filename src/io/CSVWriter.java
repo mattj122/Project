@@ -45,7 +45,7 @@ public class CSVWriter {
 		String [][] arr = null;
 		arr = getShowList();
 		
-		String colNames = "name,filename,filetype,season,seas_ep_num,tot_ep_num,length,size";
+		String colNames = "name,filename,filetype,season,seas_ep_num,tot_ep_num,length,size, path";
 		String totSizeStr = "";
 		if(totSize > 1024) {
 			totSizeStr = df.format(totSize/1024.0) + "GB";
@@ -139,7 +139,7 @@ public class CSVWriter {
 										//File extension, episode number in the season, overall episode number length of the video, string for file size
 								String[] temp = {"VIDEO NAME", eps[j].substring(eps[j].indexOf(" ") + 1, 
 										eps[j].lastIndexOf(".")), extension, Integer.toString(seasNum), Integer.toString(epNum), 
-										Integer.toString(totEp), "LENGTH", sizeStr};
+										Integer.toString(totEp), "LENGTH", sizeStr, seasDir.getAbsolutePath() + "\\" + eps[j]};
 								//Add to arraylist
 								arrList.add(temp);
 							}

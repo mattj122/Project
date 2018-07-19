@@ -24,12 +24,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.UIManager;
 
+import io.CSVReader;
 import io.FileReader;
 
 public class MovieLauncher {
 
 	private JFrame frame;
-	private ArrayList<File> queueList = new ArrayList<File>();
+	private ArrayList<String> queueList = new ArrayList<String>();
 	private JList<String> queue = new JList<String>();
 	JButton btnPlayQueue = new JButton("Play Queue");
 
@@ -72,12 +73,11 @@ public class MovieLauncher {
 		frame.setBounds(100, 100, 750, 433);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		FileReader.loadMovies(new File("C:\\Shows\\Archer"));
 		JList<String> movList = new JList<String>();
-		String []temp = new String[FileReader.getList().length];
-		for(int i = 0; i < temp.length; i++) {
-			temp[i] = FileReader.getList()[i].getName();
-		}
+		CSVReader csvr = new CSVReader(new File("C:\\Users\\vv3383my\\Documents\\GitHub\\Project\\test_env\\bin\\sh\\archer.csv"));
+		
+		csvr.read();
+		String []temp = csvr.getEpNames();
 		movList.setModel(new AbstractListModel<String>() {
 			String[] values = temp;
 			public int getSize() {
@@ -154,7 +154,7 @@ public class MovieLauncher {
 		JButton btnAddToQueue = new JButton("Add to Queue");
 		btnAddToQueue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				queueList.add(queueList.get(movList.getSelectedIndex()));
+				queueList.add(temp[movList.getSelectedIndex()]);
 				updateQueue();
 			}
 		});
@@ -162,7 +162,10 @@ public class MovieLauncher {
 		JButton btnAddAll = new JButton("Add All");
 		btnAddAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				queueList = new ArrayList<File>(Arrays.asList(FileReader.getList()));
+				queueList = new ArrayList<String>();
+				for(String s : temp) {
+					queueList.add(s);
+				}
 				updateQueue();
 			}
 		});
@@ -174,7 +177,7 @@ public class MovieLauncher {
 			public void actionPerformed(ActionEvent e) {
 				String[] f = new String[2];
 				f[0] = FileReader.getDir();
-				f[1] = FileReader.getList()[movList.getSelectedIndex()].getAbsolutePath();
+				f[1] = csvr.getPathArray()[movList.getSelectedIndex()];
 				ProcessBuilder pb = new ProcessBuilder(f);
 				try {
 					@SuppressWarnings("unused")
@@ -205,8 +208,17 @@ public class MovieLauncher {
 			public void actionPerformed(ActionEvent e) {
 				String[] f = new String[queueList.size()+1];
 				f[0] = FileReader.getDir();
+				int temp = 0;
+				int index = 0;
 				for(int i = 1; i < queueList.size()+1; i++) {
-					f[i] = queueList.get(i-1).getAbsolutePath();
+					for(int j = 0; j < csvr.getCSVMatrix()[0].length-1; j++) {
+						if(csvr.getCSVMatrix()[1][j].equals(queueList.get(index))) {
+							temp = j;
+							index++;
+						}
+					}
+					index = 0;
+					f[i] = csvr.getCSVMatrix()[8][temp];
 				}
 				ProcessBuilder pb = new ProcessBuilder(f);
 				try {
@@ -230,7 +242,7 @@ public class MovieLauncher {
 		}
 		String []temp = new String[queueList.size()];
 		for(int i = 0; i < temp.length; i++) {
-			temp[i] = queueList.get(i).getName();
+			temp[i] = queueList.get(i);
 		}
 		queue.setModel(new AbstractListModel<String>() {
 			String[] values = temp;

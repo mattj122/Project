@@ -6,37 +6,11 @@ import java.util.*;
 public class CSVReader {
 	public final String USER = "vv3383my";
 	public final String SHOW = "Archer";
-	public final String FILE_NAME = "archer.csv";
+	public String fileName;
 	public final String PATH = "C:\\Users\\" + USER + "\\Documents\\GitHub\\Project\\test_env\\bin\\sh\\";
 	public static ArrayList<ArrayList<String>> matrix;
 	public static ArrayList<String> epNames = new ArrayList<String>();
 	public final String LIMITER = ",";
-	public static void main(String[] args) {
-		String[][] temp = null;
-		CSVReader c = null;
-		try {
-			c = new CSVReader();
-			c.read();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		temp = getCSVMatrix();
-		for(int i = 0; i < temp.length; i++) {
-			System.out.print("||");
-			for(int j = 0; j < temp[0].length; j++) {
-				if(temp[i][j].length() > 14) {
-					System.out.print(temp[i][j].substring(0, 14) + "\t|");
-				}
-				else {
-					System.out.print(temp[i][j] + "\t|");
-				}
-			}
-			System.out.println("|");
-		}
-		for(int i = 0; i < getEpNames().length; i++) {
-			//System.out.println(getEpNames()[i]);
-		}
-	}
 	public void read() throws IOException {
 		String line = null;
 		String[] param = null;
@@ -44,13 +18,9 @@ public class CSVReader {
 		String[] lineSplit = null;
 		
 		BufferedReader br = null; 
-		br = new BufferedReader(new java.io.FileReader(PATH + FILE_NAME));
+		br = new BufferedReader(new java.io.FileReader(PATH + fileName));
 		param = br.readLine().split(LIMITER);
 		data = br.readLine().split(LIMITER);
-		for(String s : data) {
-			System.out.print("|" + s + "\t");
-		}
-		System.out.println();
 		int count = 0;
 		while((line = br.readLine()) != null) {
 			lineSplit = line.split(LIMITER);
@@ -64,22 +34,50 @@ public class CSVReader {
 		
 		br.close();
 	}
-	public CSVReader() throws FileNotFoundException {
+	public CSVReader(File f) throws FileNotFoundException {
 		matrix = new ArrayList<ArrayList<String>>();
-		
+		fileName = f.getName();
 	}
-	public static String[] getEpNames() {
+	public String[] getEpNames() {
 		String[] temp = new String[epNames.size()]; 
 		epNames.toArray(temp);
 		return temp;
 	}
-	public static String[][] getCSVMatrix(){
-		String[][] temp = new String[matrix.size()][matrix.get(0).size()]; 
+	public String[][] getCSVMatrix(){
+		String[][] temp = new String[matrix.get(0).size()][matrix.size()]; 
 		for(int i = 0; i < matrix.size(); i++) {
 			for(int j = 0; j < matrix.get(0).size(); j++) {
-				temp[i][j] = matrix.get(i).get(j);
+				temp[j][i] = matrix.get(i).get(j);
 			}
 		}
 		return temp;
+	}
+	@SuppressWarnings("unused")
+	private String [] getYearArray() {
+		return getCSVMatrix()[5];
+	}
+	public String [] getExtensArray() {
+		return getCSVMatrix()[2];
+	}
+	public String [] getPathArray() {
+		return getCSVMatrix()[8];
+	}
+	public File [] getFileArray() {
+		File[] out = new File[getCSVMatrix()[8].length];
+		int i = 0;
+		for(String s : getCSVMatrix()[8]) {
+			out[i] = new File(s);
+			i++;
+		}
+		return out;
+	}
+	public String [] getNameArray() {
+		return getCSVMatrix()[1];
+	}
+	public String [] getSizeArray() {
+		return getCSVMatrix()[7];
+	}
+	public String [] getLengthArray() {
+		return getCSVMatrix()[6];
 	}
 }
